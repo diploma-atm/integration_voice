@@ -1,1 +1,21 @@
+pluginManagement {
+    // Needed to find our new custom plugin
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+        mavenLocal()
+        maven {
+            url "https://maven.pkg.github.com/diploma-atm/dependency-management"
+            credentials(HttpHeaderCredentials) {
+                name = "fragerrr"
+                value = "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" // the variable resides in ~/.gradle/gradle.properties
+            }
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
+        }
+        maven { url 'https://repo.spring.io/milestone' }
+    }
+}
+
 rootProject.name = 'yandex'
