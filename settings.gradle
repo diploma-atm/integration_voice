@@ -3,15 +3,12 @@ pluginManagement {
     repositories {
         gradlePluginPortal()
         mavenCentral()
-        mavenLocal()
         maven {
-            url "https://maven.pkg.github.com/diploma-atm/dependency-management"
-            credentials(HttpHeaderCredentials) {
-                name = "fragerrr"
-                value = "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" // the variable resides in ~/.gradle/gradle.properties
-            }
-            authentication {
-                header(HttpHeaderAuthentication)
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/diploma-atm/dependency-management")
+            credentials {
+                username = "fragerrr"
+                password = "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"
             }
         }
         maven { url 'https://repo.spring.io/milestone' }

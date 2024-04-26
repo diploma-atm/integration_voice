@@ -18,17 +18,6 @@ configurations {
 repositories {
 	mavenLocal()
 	mavenCentral()
-
-	maven {
-		url "https://maven.pkg.github.com/diplom-atm/dependency-management"
-		credentials(HttpHeaderCredentials) {
-			name = "fragerrr"
-			value = "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" // the variable resides in host env GITHUB_TOKEN
-		}
-		authentication {
-			header(HttpHeaderAuthentication)
-		}
-	}
 }
 
 dependencies {
