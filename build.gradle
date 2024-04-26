@@ -39,7 +39,7 @@ bootBuildImage {
 
 	builder = "paketobuildpacks/builder-jammy-tiny"
 	createdDate = "now"
-	imageName = "ghcr.io/diplom-atm/integration_voice:${dockerImageTag}"
+	imageName = "ghcr.io/diploma-atm/integration_voice:${dockerImageTag}"
 	environment = ["BP_NATIVE_IMAGE"             : "false",
 				   "BP_JVM_VERSION"              : "17"]
 }
