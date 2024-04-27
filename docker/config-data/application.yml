@@ -1,0 +1,14 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    fetchRegistry: true
+    registryFetchIntervalSeconds: 10
+    healthcheck:
+      enabled: true
+  instance:
+    preferIpAddress: true
+    leaseExpirationDurationInSeconds: 15
+
+yandex:
+  url: https://yandex.cloud/api/speechkit/tts

@@ -17,14 +17,37 @@ configurations {
 
 repositories {
 	mavenLocal()
+	maven {
+		url = uri("https://maven.pkg.github.com/diploma-atm/library")
+		credentials {
+			username = "fragerrr"
+			password = "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"
+		}
+	}
 	mavenCentral()
 }
 
+dependencyManagement {
+	imports {
+		mavenBom "kz.diploma.shared.library:bom:1.0.0"
+	}
+}
+
 dependencies {
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+	annotationProcessor 'org.projectlombok:lombok'
+
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+	//CLOUD
+	implementation 'org.springframework.cloud:spring-cloud-starter-config'
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
+
 	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
